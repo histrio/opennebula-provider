@@ -5,6 +5,5 @@ RUN apt-get update && \
     apt-get autoremove -y && apt-get clean && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY . /usr/src/plugin/
+COPY ./Gemfile /usr/src/plugin/
 RUN cd /usr/src/plugin && gem install bundler && bundler install
-RUN cd /usr/src/plugin && rake build
